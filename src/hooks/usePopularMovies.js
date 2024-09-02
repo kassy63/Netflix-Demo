@@ -3,7 +3,7 @@ import api from "../utils/api";
 
 const fetchPopularMovies = () => {
   // return api.get(`https://api.themoviedb.org/3/movie/popular`);
-  return api.get(`/movie/popular`);
+  return api.get(`/movie/popular?language=ko-KR`);
 };
 
 export const usePopularMoviesQuery = () => {
