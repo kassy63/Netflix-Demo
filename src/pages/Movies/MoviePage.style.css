@@ -1,0 +1,45 @@
+/* 페이지네이션 컨테이너 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* 페이지 아이템 */
+.page-item {
+  margin: 0 5px;
+}
+
+/* 페이지 링크 기본 스타일 */
+.page-link {
+  color: white;
+  background-color: #333333;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* 페이지 링크 hover 시 */
+.page-link:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+/* 활성화된 페이지 (현재 페이지) */
+.active .page-link {
+  background-color: #e50914;
+  color: white;
+}
+
+/* 이전 버튼과 다음 버튼 */
+.previousLinkClassName,
+.nextLinkClassName {
+  color: white;
+}
+
+/* 이전/다음 버튼 hover 시 */
+.previousLinkClassName:hover,
+.nextLinkClassName:hover {
+  color: #e50914;
+}

@@ -3,10 +3,21 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useState } from "react";
 
 const AppLayout = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const searchByKeyword = (event) => {
+    event.preventDefault();
+    // url 바꿔주기
+    navigate(`/movies?q=${keyword}`);
+    setKeyword("");
+  };
+
   return (
     <div
       style={{
@@ -32,20 +43,22 @@ const AppLayout = () => {
               navbarScroll
             >
               <Nav.Link as={Link} to="/">
-                Home
+                홈
               </Nav.Link>
               <Nav.Link as={Link} to="/movies">
-                Movies
+                영화
               </Nav.Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
               />
-              <Button variant="outline-danger">
+              <Button variant="outline-danger" type="submit">
                 <AiOutlineSearch />
               </Button>
             </Form>
