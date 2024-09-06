@@ -33,13 +33,14 @@
 }
 
 /* 이전 버튼과 다음 버튼 */
-.previousLinkClassName,
-.nextLinkClassName {
+.page-item.previous .page-link,
+.page-item.next .page-link {
   color: white;
+  background-color: #333333;
 }
 
 /* 이전/다음 버튼 hover 시 */
-.previousLinkClassName:hover,
-.nextLinkClassName:hover {
-  color: #e50914;
+.page-item.previous .page-link:hover,
+.page-item.next .page-link:hover {
+  background-color: #e50914;
 }
