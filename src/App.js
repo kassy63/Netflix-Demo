@@ -17,12 +17,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
-        // user 화면
+        {/* user 화면 */}
         <Route index element={<Homepage />} />
         <Route path="/movies">
-          // movies 화면
+          {/* movies 화면 */}
           <Route index element={<MoviePage />} />
-          <Route path=":id" element={<MovieDetailPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailPage />} />
           {/* <Route path="/movies" element={<MoviePage />} />
         <Route path="/movies/:id" element={<MovieDetailPage />} /> */}
         </Route>
