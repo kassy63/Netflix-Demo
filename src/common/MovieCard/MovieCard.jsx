@@ -4,9 +4,14 @@ import { TbRating18Plus, TbWashDryA } from "react-icons/tb";
 import { FaImdb } from "react-icons/fa";
 import { GoPersonFill } from "react-icons/go";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie, index }) => {
   const { data: genreData } = useMovieGenreQuery();
+  const navigate = useNavigate();
+
+  // movie 객체 확인
+  console.log(movie);
 
   // const showGenre = (genreIdList) => {
   //   if (!genreIdList) return [];
@@ -36,8 +41,13 @@ const MovieCard = ({ movie, index }) => {
   //     .filter(Boolean); // null이나 undefined를 필터링
   // };
 
+  const handleCardClick = () => {
+    navigate(`/movies/${movie.id}`);
+  };
+
   return (
     <div
+      onClick={handleCardClick}
       style={{
         backgroundImage:
           "url(" +
