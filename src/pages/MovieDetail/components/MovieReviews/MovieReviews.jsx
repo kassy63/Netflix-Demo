@@ -44,7 +44,6 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <h3>리뷰 ({reviews.results?.length})</h3>
       {reviews.results.map((review) => {
         const isExpanded = expandedReviewIds.includes(review.id);
         const contentToShow = isExpanded
