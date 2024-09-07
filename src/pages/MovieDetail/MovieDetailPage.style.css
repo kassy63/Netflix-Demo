@@ -9,4 +9,6 @@
 
 .badge-container {
   margin-block: 10px;
+  display: flex;
+  align-items: center;
 }
